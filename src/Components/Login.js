@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function Login(params) {
     const submitHandle = (e)=>{
         e.preventDefault();
@@ -15,11 +17,16 @@ function Login(params) {
             return;
         }
 
-        if (email !== "jjanchundia92@gmail.com" || password !== "12345") {
+        if (email !== "challenge@alkemy.org" || password !== "react") {
             console.log("Credenciales incorrectas");
         }
 
         console.log("Ok, estamos listo para enviar la información");
+        axios
+        .post('http://challenge-react.alkemy.org/', {email, password})
+        .then(res=>{
+            console.log(res.data);
+        });
     }
 
   return (
