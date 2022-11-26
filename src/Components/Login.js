@@ -1,5 +1,7 @@
 import axios from "axios";
 import swalert from '@sweetalert/with-react';
+// para instalar Sweet Alert
+// npm i @sweetalert/with-react (--force se ingresa esto al final en caso de error)
 
 function Login(params) {
     const submitHandle = (e)=>{
@@ -29,6 +31,8 @@ function Login(params) {
         .then(res=>{
           swalert(<h2>Perfecto, ingresaste correctemente</h2>);
             console.log(res.data);
+            const tokenRecibido = res.data.token;
+            localStorage.getItem("token", tokenRecibido);
         });
     }
 
