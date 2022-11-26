@@ -2,8 +2,12 @@ import axios from "axios";
 import swalert from '@sweetalert/with-react';
 // para instalar Sweet Alert
 // npm i @sweetalert/with-react (--force se ingresa esto al final en caso de error)
+import { useNavigate  } from "react-router-dom";
 
 function Login(params) {
+  
+  const history = useNavigate();
+
     const submitHandle = (e)=>{
         e.preventDefault();
         const email = e.target.email.value;
@@ -32,7 +36,9 @@ function Login(params) {
           swalert(<h2>Perfecto, ingresaste correctemente</h2>);
             console.log(res.data);
             const tokenRecibido = res.data.token;
-            localStorage.getItem("token", tokenRecibido);
+            localStorage.setItem("token", tokenRecibido);
+            //ingresamos a nuestra ruta
+            history('/listado');
         });
     }
 
