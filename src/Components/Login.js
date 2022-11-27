@@ -51,11 +51,13 @@ function Login(params) {
           <input type="text" name="email" />
           <br />
         </label>
+        <div>
         <label>
           <span>Password:</span>
           <input type="password" name="password" />
           <br />
         </label>
+        </div>
         <button type="submit">Ingresar</button>
       </form>
     </div>
