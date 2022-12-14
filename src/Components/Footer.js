@@ -4,12 +4,12 @@ function Footer() {
         <footer>
             <nav>
                 <ul>
-                    <li>
+                    {/* <li>
                         <a href="https://www.facebook.com/" rel="noopener noreferrer">Facebook</a>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
-            <p>Copyright Alkemy Challenger</p>
+            <p align="center">Copyright Alkemy Challenger</p>
         </footer>
     );
 }

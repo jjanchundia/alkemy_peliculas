@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link, Navigate } from "react-router-dom";
 import axios from "axios";
+import sweetAlert from '@sweetalert/with-react';
 
 function Listado() {
   // const history = useNavigate();
@@ -15,6 +16,9 @@ function Listado() {
     .then( res => {
       const apiData = res.data;
       setMoviesList(apiData.results);
+    })
+    .catch(error=>{
+      sweetAlert(<h2>Hubo problemas, intente mas tarde</h2>);
     });
   }, [setMoviesList]);
 
@@ -37,7 +41,7 @@ function Listado() {
                 <div className="card-body">
                   <h5 className="card-title">{oneMovie.title.substring(0, 20)}...</h5>
                   <p className="card-text">{oneMovie.overview.substring(0, 100)}...</p>
-                  <Link href="/" className="btn btn-primary">
+                  <Link to={`/detalle?movieId=${oneMovie.id}`} className="btn btn-primary">
                     View Details
                   </Link>
                 </div>
