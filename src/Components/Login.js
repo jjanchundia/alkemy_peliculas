@@ -36,13 +36,14 @@ function Login(params) {
         swalert(<h2>Perfecto, ingresaste correctemente</h2>);
         // console.log(res.data);
         const tokenRecibido = res.data.token;
-        localStorage.setItem("token", tokenRecibido);
+        // localStorage.setItem("token", tokenRecibido); se cambia
+        sessionStorage.setItem("token", tokenRecibido);
         //ingresamos a nuestra ruta
         history("/listado");
       });
   };
 
-  let token = localStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
 
   return (
     <>
