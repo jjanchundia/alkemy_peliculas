@@ -1,5 +1,6 @@
 // Esto hace q no se refresque la página al ir al enlace
 import { Link } from "react-router-dom";
+import Buscador from "./Buscador";
 
 function Header() {
   return (
@@ -28,12 +29,10 @@ function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="/listado">Listado</Link>
               </li>
-              {/* <li>
-                <Link to="/contacto">Contacto</Link>
-              </li> */}
             </ul>
           </div>
         </div>
+        <Buscador/>
       </nav>
     </header>
   );
